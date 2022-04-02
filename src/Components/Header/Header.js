@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -8,9 +8,9 @@ const Header = () => {
                 <Link to='/' className='text-2xl font-sans font-bold'>Countries Details</Link>
             </div>
             <div className="text-xl flex gap-4">
-                <Link to="/home">Home</Link>
-                <Link to="/countries">Countries</Link>
-                <Link to="/contact">Contact</Link>
+                <NavLink className={({isActive}) => isActive ? "text-gray-600" : "text-slate-400"} to="/home">Home</NavLink>
+                <NavLink className={({isActive}) => isActive ? "text-gray-600" : "text-slate-400"} to="/countries">Countries</NavLink>
+                <NavLink className={({isActive}) => isActive ? "text-gray-600" : "text-slate-400"} to="/contact">Contact</NavLink>
             </div>
         </div>
     );
